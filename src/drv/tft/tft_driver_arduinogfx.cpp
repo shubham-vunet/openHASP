@@ -38,8 +38,8 @@ void ArduinoGfx::init(int w, int h)
         10 /* pclk_active_neg */, 6000000L /* prefer_speed */, false /* useBigEndian */,
         0 /* de_idle_high*/, 0 /* pclk_idle_high */);
 
-    tft = new Arduino_RGB_Display(TFT_WIDTH /* width */, TFT_HEIGHT /* height */, rgbpanel, 0 /* rotation */, true /* auto_flush */,
-    bus, -1 /* RST */, st7701_sensecap_indicator_init_operations, sizeof(st7701_sensecap_indicator_init_operations));
+    tft = new Arduino_RGB_Display(TFT_WIDTH /* width */, TFT_HEIGHT /* height */, rgbpanel, 2 /* rotation */, true /* auto_flush */,
+    bus, -1 /* RST */, st7701_type9_init_operations, sizeof(st7701_type9_init_operations));
 
 #elif(TFT_WIDTH == 480) && (TFT_HEIGHT == 480) && defined(LILYGO_T_RGB)
     Wire.begin(8 /* SDA */, 48 /* SCL */, 800000L /* speed */);
